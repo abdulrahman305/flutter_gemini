@@ -2,120 +2,220 @@ import '../models/gemini_model/gemini_model.dart';
 
 class Constants {
   Constants._();
-  static const String defaultModel = 'models/gemini-1.5-flash';
-  static const String defaultVersion = 'v1beta';
+
+  static const String defaultModel = 'models/gemini-2.5-flash';
+  static const String defaultVersion = 'v1';
   static const String defaultGenerateType = 'generateContent';
   static const String baseUrl = 'https://generativelanguage.googleapis.com/';
 
   static List<GeminiModel> get geminiDefaultModels => [
         {
-          "name": "models/chat-bison-001",
+          "name": "models/gemini-2.5-pro",
           "version": "001",
-          "displayName": "Chat Bison",
-          "description": "Chat-optimized generative language model.",
-          "inputTokenLimit": 4096,
-          "outputTokenLimit": 1024,
-          "supportedGenerationMethods": [
-            "generateMessage",
-            "countMessageTokens"
-          ],
-          "temperature": 0.25,
-          "topP": 0.95,
-          "topK": 40
-        },
-        {
-          "name": "models/text-bison-001",
-          "version": "001",
-          "displayName": "Text Bison",
-          "description": "Model targeted for text generation.",
-          "inputTokenLimit": 8196,
-          "outputTokenLimit": 1024,
-          "supportedGenerationMethods": [
-            "generateText",
-            "countTextTokens",
-            "createTunedTextModel"
-          ],
-          "temperature": 0.7,
-          "topP": 0.95,
-          "topK": 40
-        },
-        {
-          "name": "models/embedding-gecko-001",
-          "version": "001",
-          "displayName": "Embedding Gecko",
-          "description": "Obtain a distributed representation of a text.",
-          "inputTokenLimit": 1024,
-          "outputTokenLimit": 1,
-          "supportedGenerationMethods": ["embedText", "countTextTokens"]
-        },
-        {
-          "name": "models/embedding-gecko-002",
-          "version": "002",
-          "displayName": "Embedding Gecko 002",
-          "description": "Obtain a distributed representation of a text.",
-          "inputTokenLimit": 2048,
-          "outputTokenLimit": 1,
-          "supportedGenerationMethods": ["embedText", "countTextTokens"]
-        },
-        {
-          "name": "models/gemini-pro",
-          "version": "001",
-          "displayName": "Gemini Pro",
+          "displayName": "Gemini 2.5 Pro",
           "description":
-              "The best model for scaling across a wide range of tasks",
-          "inputTokenLimit": 30720,
-          "outputTokenLimit": 2048,
+              "Our most powerful thinking model with maximum response accuracy and state-of-the-art performance. Best for complex coding, reasoning, and multimodal understanding.",
+          "inputTokenLimit": 1048576,
+          "outputTokenLimit": 65536,
           "supportedGenerationMethods": ["generateContent", "countTokens"],
           "temperature": 0.9,
           "topP": 1,
-          "topK": 1
+          "topK": 32
         },
         {
-          "name": "models/gemini-1.5-flash",
+          "name": "models/gemini-2.5-flash",
           "version": "001",
-          "displayName": "Gemini Pro Vision",
+          "displayName": "Gemini 2.5 Flash",
           "description":
-              "The best image understanding model to handle a broad range of applications",
-          "inputTokenLimit": 12288,
-          "outputTokenLimit": 4096,
+              "Our best model in terms of price-performance, offering well-rounded capabilities. Best for low latency, high volume tasks that require thinking.",
+          "inputTokenLimit": 1048576,
+          "outputTokenLimit": 65536,
           "supportedGenerationMethods": ["generateContent", "countTokens"],
           "temperature": 0.4,
           "topP": 1,
           "topK": 32
         },
         {
-          "name": "models/gemini-ultra",
+          "name": "models/gemini-2.5-flash-lite",
           "version": "001",
-          "displayName": "Gemini Ultra",
-          "description": "The most capable model for highly complex tasks",
-          "inputTokenLimit": 30720,
-          "outputTokenLimit": 2048,
+          "displayName": "Gemini 2.5 Flash-Lite",
+          "description":
+              "A Gemini 2.5 Flash model optimized for cost-efficiency and high throughput.",
+          "inputTokenLimit": 1048576,
+          "outputTokenLimit": 65536,
+          "supportedGenerationMethods": ["generateContent", "countTokens"],
+          "temperature": 0.4,
+          "topP": 1,
+          "topK": 32
+        },
+        {
+          "name": "models/gemini-2.0-flash-001",
+          "version": "001",
+          "displayName": "Gemini 2.0 Flash",
+          "description":
+              "Second generation model with next-gen features including superior speed, native tool use, and 1M token context window.",
+          "inputTokenLimit": 1048576,
+          "outputTokenLimit": 8192,
+          "supportedGenerationMethods": ["generateContent", "countTokens"],
+          "temperature": 0.4,
+          "topP": 1,
+          "topK": 32
+        },
+        {
+          "name": "models/gemini-2.0-flash-lite-001",
+          "version": "001",
+          "displayName": "Gemini 2.0 Flash-Lite",
+          "description":
+              "A Gemini 2.0 Flash model optimized for cost efficiency and low latency.",
+          "inputTokenLimit": 1048576,
+          "outputTokenLimit": 8192,
+          "supportedGenerationMethods": ["generateContent", "countTokens"],
+          "temperature": 0.4,
+          "topP": 1,
+          "topK": 32
+        },
+        {
+          "name": "models/gemini-1.5-flash",
+          "version": "002",
+          "displayName": "Gemini 1.5 Flash",
+          "description":
+              "Fast and versatile multimodal model for scaling across diverse tasks. (Previous generation)",
+          "inputTokenLimit": 1048576,
+          "outputTokenLimit": 8192,
+          "supportedGenerationMethods": ["generateContent", "countTokens"],
+          "temperature": 0.4,
+          "topP": 1,
+          "topK": 32
+        },
+        {
+          "name": "models/gemini-1.5-pro",
+          "version": "002",
+          "displayName": "Gemini 1.5 Pro",
+          "description":
+              "Mid-size multimodal model optimized for wide-range reasoning tasks. Can process large amounts of data. (Previous generation)",
+          "inputTokenLimit": 2097152,
+          "outputTokenLimit": 8192,
           "supportedGenerationMethods": ["generateContent", "countTokens"],
           "temperature": 0.9,
           "topP": 1,
           "topK": 32
         },
         {
-          "name": "models/embedding-001",
+          "name": "models/gemini-embedding-001",
           "version": "001",
-          "displayName": "Embedding 001",
-          "description": "Obtain a distributed representation of a text.",
+          "displayName": "Gemini Embedding",
+          "description":
+              "Obtain a distributed representation of a text with latest embedding capabilities.",
           "inputTokenLimit": 2048,
           "outputTokenLimit": 1,
-          "supportedGenerationMethods": ["embedContent", "countTextTokens"]
+          "supportedGenerationMethods": ["embedContent", "countTokens"]
         },
         {
-          "name": "models/aqa",
-          "version": "001",
-          "displayName": "Model that performs Attributed Question Answering.",
+          "name": "models/text-embedding-005",
+          "version": "005",
+          "displayName": "Text Embedding 005",
           "description":
-              "Model trained to return answers to questions that are grounded in provided sources, along with estimating answerable probability.",
-          "inputTokenLimit": 7168,
-          "outputTokenLimit": 1024,
-          "supportedGenerationMethods": ["generateAnswer"],
-          "temperature": 0.2,
-          "topP": 1,
-          "topK": 40
+              "Latest text embedding model with improved performance.",
+          "inputTokenLimit": 2048,
+          "outputTokenLimit": 1,
+          "supportedGenerationMethods": ["embedContent", "countTokens"]
+        },
+        {
+          "name": "models/text-embedding-004",
+          "version": "004",
+          "displayName": "Text Embedding 004",
+          "description": "Text embedding model with robust performance.",
+          "inputTokenLimit": 2048,
+          "outputTokenLimit": 1,
+          "supportedGenerationMethods": ["embedContent", "countTokens"]
+        },
+        {
+          "name": "models/text-multilingual-embedding-002",
+          "version": "002",
+          "displayName": "Multilingual Text Embedding",
+          "description":
+              "Multilingual text embedding model supporting various languages.",
+          "inputTokenLimit": 2048,
+          "outputTokenLimit": 1,
+          "supportedGenerationMethods": ["embedContent", "countTokens"]
         }
       ].map((e) => GeminiModel.fromJson(e)).toList();
+
+  static List<GeminiModel> get geminiLiveModels => [
+        {
+          "name": "models/gemini-live-2.5-flash-preview",
+          "version": "preview",
+          "displayName": "Gemini 2.5 Flash Live",
+          "description":
+              "Low-latency bidirectional voice and video interactions with Gemini 2.5 Flash.",
+          "inputTokenLimit": 1048576,
+          "outputTokenLimit": 8192,
+          "supportedGenerationMethods": ["generateContent", "liveApi"],
+          "temperature": 0.4,
+          "topP": 1,
+          "topK": 32
+        },
+        {
+          "name": "models/gemini-2.0-flash-live-001",
+          "version": "001",
+          "displayName": "Gemini 2.0 Flash Live",
+          "description":
+              "Low-latency bidirectional voice and video interactions with Gemini 2.0 Flash.",
+          "inputTokenLimit": 1048576,
+          "outputTokenLimit": 8192,
+          "supportedGenerationMethods": ["generateContent", "liveApi"],
+          "temperature": 0.4,
+          "topP": 1,
+          "topK": 32
+        }
+      ].map((e) => GeminiModel.fromJson(e)).toList();
+
+  static List<GeminiModel> get geminiSpecializedModels => [
+        {
+          "name": "models/gemini-2.5-flash-image-preview",
+          "version": "preview",
+          "displayName": "Gemini 2.5 Flash Image",
+          "description":
+              "Generate and edit images conversationally with Gemini 2.5 Flash.",
+          "inputTokenLimit": 32768,
+          "outputTokenLimit": 32768,
+          "supportedGenerationMethods": ["generateContent", "imageGeneration"]
+        },
+        {
+          "name": "models/gemini-2.0-flash-preview-image-generation",
+          "version": "preview",
+          "displayName": "Gemini 2.0 Flash Image Generation",
+          "description":
+              "Generate and edit images conversationally with Gemini 2.0 Flash.",
+          "inputTokenLimit": 32000,
+          "outputTokenLimit": 8192,
+          "supportedGenerationMethods": ["generateContent", "imageGeneration"]
+        },
+        {
+          "name": "models/gemini-2.5-flash-preview-tts",
+          "version": "preview",
+          "displayName": "Gemini 2.5 Flash TTS",
+          "description":
+              "Price-performant text-to-speech model with high control and transparency.",
+          "inputTokenLimit": 8000,
+          "outputTokenLimit": 16000,
+          "supportedGenerationMethods": ["textToSpeech"]
+        },
+        {
+          "name": "models/gemini-2.5-pro-preview-tts",
+          "version": "preview",
+          "displayName": "Gemini 2.5 Pro TTS",
+          "description":
+              "Most powerful text-to-speech model with high control and transparency.",
+          "inputTokenLimit": 8000,
+          "outputTokenLimit": 16000,
+          "supportedGenerationMethods": ["textToSpeech"]
+        }
+      ].map((e) => GeminiModel.fromJson(e)).toList();
+
+  static List<GeminiModel> get allGeminiModels => [
+        ...geminiDefaultModels,
+        ...geminiLiveModels,
+        ...geminiSpecializedModels,
+      ];
 }
